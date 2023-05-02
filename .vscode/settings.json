@@ -1,0 +1,9 @@
+{
+  "spellright.language": ["en"],
+  "spellright.documentTypes": ["markdown", "mdx"],
+  "spellright.parserByClass": {
+    "mdx": {
+      "parser": "markdown"
+    }
+  }
+}

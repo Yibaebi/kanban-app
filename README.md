@@ -1,38 +1,66 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Kanban App
+
+This is a simple web-based Kanban app that allows users to visualize and manage their tasks using the Kanban board
+methodology.
 
 ## Getting Started
 
-First, run the development server:
+To get started with the app, you can visit the live demo at [http://localhost:3000](Coming Soon).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The Kanban app has the following features:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- Create, edit and delete boards.
+- Create, edit and delete status columns.
+- Create, edit and delete tasks to a status column.
+- Create, edit and delete subtasks tasks to a task.
+- Check/Uncheck subtasks as done/incomplete.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Installation
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+To install the app on your local machine, follow these steps:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Clone this repository:
 
-## Learn More
+   ```bash
+   git clone https://github.com/Yibaebi/kanban-app.git
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. Install the dependencies:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   cd kanban-app
+   yarn
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+3. Start the app:
 
-## Deploy on Vercel
+   ```bash
+   yarn run dev
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. Open your browser and navigate to [http://localhost:3000](http://localhost:3000).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Technology Stack
+
+The Kanban app is built using the following technologies:
+
+- Next
+- React DnD
+- Framer
+- Tailwind
+
+## Contributing
+
+If you want to contribute to the Kanban app, you can follow these steps:
+
+1. Fork this repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them with a descriptive message.
+4. Push your branch to your forked repository.
+5. Create a pull request to the main repository.
+
+## License
+
+The Kanban app is licensed under the MIT License. See [LICENSE](LICENSE) for more information.
