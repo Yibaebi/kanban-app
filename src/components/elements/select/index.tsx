@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { BiChevronDown } from 'react-icons/bi';
+import { ArrowDownIcon } from '../../../../public/assets';
 
 //  Styles
 const listTextStyle =
@@ -27,8 +27,8 @@ interface SelectProps {
 }
 
 const Select: React.FC<SelectProps> = (props) => {
-  
-  const selectRef = useRef();
+
+  const selectRef = useRef<HTMLDivElement | null>(null);
 
   const {
     label = '',
@@ -40,12 +40,12 @@ const Select: React.FC<SelectProps> = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
    useEffect(() => {
-     const checkIfClickedOutside = (e: React.MouseEvent<HTMLLIElement>) => {
+     const checkIfClickedOutside = (e: MouseEvent) => {
        // If the menu is open and the clicked target is not within the menu, then close menu
        if (
          isOpen &&
          selectRef.current &&
-         !selectRef.current.contains(e.target)
+         !selectRef.current.contains(e.target as Node)
        ) {
          setIsOpen(false);
        }
@@ -57,24 +57,24 @@ const Select: React.FC<SelectProps> = (props) => {
        // Cleanup the event listener
        document.removeEventListener('mousedown', checkIfClickedOutside);
      };
-   }, [isOpen]);
+   }, [isOpen, selectRef]);
 
 
   return (
-    <div className={containerStyles}>
+    <div ref={selectRef} className={containerStyles}>
       <label className={labelStyles}>{label}</label>
-      <div className="flex flex-col gap-2 relative">
+      <div className="relative flex flex-col gap-2">
         <div
           onClick={() => setIsOpen(!isOpen)}
           className={`${selectStyles} ${isOpen && 'border border-purple-main'}`}
         >
           <p>{selectedOption.title}</p>
-          <BiChevronDown
+          <ArrowDownIcon
             className={`text-purple-main ${isOpen && 'rotate-180'}`}
             size={20}
           />
         </div>
-        <ul ref={selectRef} className={isOpen ? listContainerStyles : 'hidden'}>
+        <ul  className={isOpen ? listContainerStyles : 'hidden'}>
           {options?.map((option) => {
             return (
               <li
