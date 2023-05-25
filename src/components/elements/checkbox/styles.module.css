@@ -1,0 +1,23 @@
+.checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  transition-duration: 0.3s;
+  @apply h-4 w-4 cursor-pointer rounded-sm border border-[#828fa3] bg-white text-purple-main outline-none;
+}
+.checkbox:focus {
+  @apply border border-[#828fa3] outline-none;
+}
+.label > input:checked {
+  @apply border border-[#828fa3] bg-purple-main outline-none;
+}
+
+.label > input:checked + span::before {
+  content: '\2713';
+  @apply absolute left-[0.7rem] top-[0.2rem] block text-center text-white;
+}
+
+.label > input:active {
+  @apply border border-[#828fa3] outline-none;
+}

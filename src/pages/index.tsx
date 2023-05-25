@@ -1,4 +1,4 @@
-import { Button, Input, Select, SelectOption } from '@/components';
+import { Button, Input, Select, CheckBox, SelectOption } from '@/components';
 import { Plus_Jakarta_Sans } from 'next/font/google';
 import { useState } from 'react';
 
@@ -13,12 +13,20 @@ const selectOptions = [
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
+  // Select Props to be passed to the select component
   const [selectedOption, setSelectedOption] = useState(selectOptions[0]);
-
   const onSelectChange = (
     e: React.MouseEvent<HTMLLIElement>,
     option: SelectOption
   ) => setSelectedOption(option);
+
+  // Checkbox props to be passed to the checkbox component
+  const [isChecked, setIsChecked] = useState(false);
+  const [isChecked1, setIsChecked1] = useState(true);
+  const onCheckboxChange1 = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setIsChecked(e.target.checked);
+  const onCheckboxChange2 = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setIsChecked1(e.target.checked);
 
   return (
     <div className={isDarkMode ? 'dark' : ' '}>
@@ -111,13 +119,37 @@ export default function Home() {
         <section className="mb-5 flex flex-col gap-4">
           <h6>Select Component</h6>
 
-          <div className="flex max-w-lg flex-col gap-3">
+          <div className="flex w-[21.875rem] max-w-lg flex-col gap-3">
             <Select
               label="Dropdown (Idle)"
               options={selectOptions}
               selectedOption={selectedOption}
               onChange={onSelectChange}
             />
+          </div>
+        </section>
+
+        {/* Subtask Checkbox Component Display */}
+        <section className="mb-5 flex flex-col gap-4">
+          <h6>Subtask Checkbox Component</h6>
+
+          <div className="flex w-[21.875rem] max-w-lg flex-col gap-3">
+            <div>
+              <CheckBox
+                label="Idle"
+                id="checkbox1"
+                checked={isChecked}
+                onChange={onCheckboxChange1}
+              />
+            </div>
+            <div>
+              <CheckBox
+                label="Completed"
+                id="checkbox2"
+                checked={isChecked1}
+                onChange={onCheckboxChange2}
+              />
+            </div>
           </div>
         </section>
       </main>

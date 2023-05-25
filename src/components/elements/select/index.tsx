@@ -6,7 +6,7 @@ const listTextStyle =
   'text-[13px] text-blue-dark dark:text-white p-4 cursor-pointer py-2 hover:bg-blue-light dark:hover:bg-purple-100';
 const selectStyles = 'flex h-[2.5rem] w-[21.875rem] items-center justify-between rounded-md  border border-blue-dark border-opacity-20 px-[1rem] py-[0.5rem] text-sm text-black hover:cursor-pointer focus:border-none focus:ring-blue-dark dark:bg-gunmetal dark:text-white'
 const containerStyles = 'w-full flex flex-col gap-4';
-const listContainerStyles = 'w-[21.875rem] rounded-lg bg-transparent bg-white  text-blue-dark dark:bg-very-dark-gray dark:text-white absolute top-12'
+const listContainerStyles = 'w-[21.875rem] z-10 rounded-lg bg-transparent bg-white  text-blue-dark dark:bg-very-dark-gray dark:text-white absolute top-12'
 const labelStyles = 'text-sm font-bold dark:text-white text-blue-dark';
 
 // Select Option Props

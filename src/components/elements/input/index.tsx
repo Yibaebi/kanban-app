@@ -10,7 +10,7 @@ const errorTextStyles = 'text-red-dark right-1 dark:bg-gunmetal bg-white px-2 ab
 // Interface
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
-  error?: string;
+  error?: string; 
 }
 
 const Input: React.FC<InputProps> = (props) => {
